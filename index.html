@@ -16,77 +16,13 @@
 <link rel="shortcut icon" href="./favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29/themes/prism-solarizedlight.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.0.0/dist/css/responsiveslides.min.css">
 <link rel="stylesheet" href="./theme.css">
-<link rel="stylesheet" href="/dist/css/responsiveslides.min.css">
 <style>
 #slider1 li {
   transition-duration: 0.8s;
 }
 </style>
-<script src="/dist/js/responsiveslides.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Slideshow 1
-  new responsiveSlides('#slider1', { timeout: 5000 });
-
-    /* Slideshow 2
-    new responsiveSlides('#slider2', {
-      auto: false,
-      speed: 800,
-      before: function( slideIndex ) {
-        if ( window.console && window.console.log ) {
-          window.console.log( 'Before callback event fired.' );
-        }
-        var myInstance = this,
-          mySlider = myInstance.slider || false;
-        if ( ! mySlider ) {
-          return false;
-        }
-        var nextSlide = myInstance.slider.getElementsByTagName( 'img' )[ slideIndex ] || false;
-        if ( nextSlide && /placeholder/.test( nextSlide.className || '' ) ) {
-          nextSlide.setAttribute( 'src', nextSlide.getAttribute( 'data-src' ) );
-          nextSlide.removeAttribute( 'data-src' );
-          nextSlide.className = nextSlide.className.replace( 'placeholder', '' );
-        }
-      }
-    });
-
-    /* Slideshow 2
-    new responsiveSlides( '#slider2', {
-      auto: false,
-      pager: true,
-      speed: 300,
-      maxwidth: 540
-    });
-
-    /* Slideshow 3
-    new responsiveSlides( '#slider3', {
-      manualControls: '#slider3-pager',
-      maxwidth: 540
-    });
-
-    // Slideshow 4
-
-    new responsiveSlides( '#slider4', {
-      auto: false,
-      pager: false,
-      nav: true,
-      speed: 500,
-      namespace: "callbacks",
-      before: function () {
-        var listItem = document.createElement( 'li' );
-        listItem.appendChild( document.createTextNode( 'before event fired.' ) );
-        _log.appendChild( listItem );
-      },
-      after: function () {
-        var listItem = document.createElement( 'li' );
-        listItem.appendChild( document.createTextNode( 'after event fired.' ) );
-        _log.appendChild( listItem );
-      }
-    });
-    */
-});
-</script>
 </head>
 <body>
 <div id="layout">
@@ -243,6 +179,70 @@ document.addEventListener(&#039;DOMContentLoaded&#039;, function() {
 
 <script src="https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29/prism.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.0.0/dist/js/responsiveslides.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Slideshow 1
+  new responsiveSlides('#slider1', { timeout: 5000 });
+
+    /* Slideshow 2
+    new responsiveSlides('#slider2', {
+      auto: false,
+      speed: 800,
+      before: function( slideIndex ) {
+        if ( window.console && window.console.log ) {
+          window.console.log( 'Before callback event fired.' );
+        }
+        var myInstance = this,
+          mySlider = myInstance.slider || false;
+        if ( ! mySlider ) {
+          return false;
+        }
+        var nextSlide = myInstance.slider.getElementsByTagName( 'img' )[ slideIndex ] || false;
+        if ( nextSlide && /placeholder/.test( nextSlide.className || '' ) ) {
+          nextSlide.setAttribute( 'src', nextSlide.getAttribute( 'data-src' ) );
+          nextSlide.removeAttribute( 'data-src' );
+          nextSlide.className = nextSlide.className.replace( 'placeholder', '' );
+        }
+      }
+    });
+
+    /* Slideshow 2
+    new responsiveSlides( '#slider2', {
+      auto: false,
+      pager: true,
+      speed: 300,
+      maxwidth: 540
+    });
+
+    /* Slideshow 3
+    new responsiveSlides( '#slider3', {
+      manualControls: '#slider3-pager',
+      maxwidth: 540
+    });
+
+    // Slideshow 4
+
+    new responsiveSlides( '#slider4', {
+      auto: false,
+      pager: false,
+      nav: true,
+      speed: 500,
+      namespace: "callbacks",
+      before: function () {
+        var listItem = document.createElement( 'li' );
+        listItem.appendChild( document.createTextNode( 'before event fired.' ) );
+        _log.appendChild( listItem );
+      },
+      after: function () {
+        var listItem = document.createElement( 'li' );
+        listItem.appendChild( document.createTextNode( 'after event fired.' ) );
+        _log.appendChild( listItem );
+      }
+    });
+    */
+});
+</script>
 <script src="./ui.js"></script>
 
 </body>
