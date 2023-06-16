@@ -1,8 +1,8 @@
 /*! ResponsiveSlides.js
  *
- * Fork Copyright (c) 2023 @peter-power-594
- * Original Copyright (c) 2011-2023 @arielsalminen
- * Available under the MIT license
+ * @author Fork Copyright (c) 2023 @peter-power-594
+ * @author Original Copyright (c) 2011-2023 @arielsalminen
+ * @license Available under the MIT license
  */
 
 (function( window ) {
@@ -29,7 +29,7 @@
       "auto": typeof ops.auto !== 'undefined' ? ops.auto : true,
 
       // Integer: Speed of the transition, in milliseconds
-      "speed": ops.speed || 500,
+      "speed": ops.speed || false,
 
       // Integer: Time between slide transitions, in milliseconds
       "timeout": ops.timeout || 4000,
@@ -94,6 +94,7 @@
       else {
         sliders[ i ].className += ' ' + isActiveClassName;
         _self.sliders.push( _self.slider( sliders[ i ], j, sliderIndex ) );
+        _self.settings.before.apply( _self.sliders[ _self.sliders.length - 1 ], [ 0 ] );
         sliderIndex++; j++;
       }
     }
@@ -120,16 +121,53 @@
   };
 
 
+  /**
+   * @method getTransitionDuration
+   * @desc Retrieve the transition duration from an html node
+   * 
+   * @param \HTML_Node el The html node to test
+   * @returns Integer The transition duration setting in ms or 300 by default
+   */
+  responsiveSlides.prototype.getTransitionDuration = function( el ) {
+	if ( ! el || ! el.nodeType || el.nodeType !== 1 ) {
+		// Not an html node, probably a text node 
+		// so looking for the nighboor node if avaivable
+		if ( el.nextSibling ) {
+			el = el.nextSibling;
+		}
+		else {
+			return 300;
+		}
+	}
+	var properties = [
+      'transitionDuration',
+      'WebkitTransitionDuration',
+      'msTransitionDuration',
+      'MozTransitionDuration',
+      'OTransitionDuration'
+    ];
+    var currStyle = window.getComputedStyle( el ),
+		p = properties.shift();
+    while ( p ) {
+      if ( typeof currStyle[ p ] !== 'undefined' ) {
+        return parseFloat( currStyle[ p ] ) * ( /ms/.test( currStyle[ p ] ) ? 1 : 1000 );
+      }
+	  p = properties.length ? properties.shift() : false;
+    }
+    return 300;
+  };
+
+
   responsiveSlides.prototype.hideItem = function( myItem ) {
     if ( ! myItem ) {
       return false;
     }
     // Styles for hidden slides
     var hiddenStyles = {
-      float: "none",
-      position: "absolute",
-      opacity: 0,
-      zIndex: 1
+      // float: "none",
+      // position: "absolute",
+      // zIndex: 1,
+      opacity: 0
     };
     for ( var myStyle in hiddenStyles ) {
       myItem.style[ myStyle ] = hiddenStyles[ myStyle ];
@@ -137,16 +175,22 @@
   };
 
 
+  /**
+   * @method showItem
+   * 
+   * @param \HTML_Node myItem
+   * @returns Boolean TRUE in case of success or FALSE in case of error
+   */
   responsiveSlides.prototype.showItem = function( myItem ) {
     if ( ! myItem ) {
       return false;
     }
     // Styles for visible slides
     var visibleStyles = {
-      float: "left",
-      position: "relative",
-      opacity: 1,
-      zIndex: 2
+      // float: "left",
+      // position: "relative",
+      // zIndex: 2,
+      opacity: 1
     };
     for ( var myStyle in visibleStyles ) {
       myItem.style[ myStyle ] = visibleStyles[ myStyle ];
@@ -167,27 +211,9 @@
     var fadeTime = myInstance.fadeTime || _self.settings.fadeTime,
       visibleClass = _self.sliders[ myInstanceIndex ].classNames.visible;
 
-    if ( _self.browser.supportsTransitions ) {
-      // If CSS3 transitions are supported
-
-      for ( var s = 0; s < mySlides.length; s++ ) {
-        if ( ( mySlides[ s ].className || '' ).indexOf( visibleClass ) > 0 ) {
-          mySlides[ s ].className = mySlides[ s ].className.replace( ' ' + visibleClass, '' );
-        }
-        _self.hideItem( mySlides[ s ] );
-      }
-      if ( mySlides[ mySlideIndex ] ) {
-        mySlides[ mySlideIndex ].className += ' ' + visibleClass;
-        _self.showItem( mySlides[ mySlideIndex ] );
-      }
-      _self.sliders[ myInstanceIndex ].current = mySlideIndex;
-      setTimeout(function () {
-        _self.settings.after( mySlideIndex );
-      }, fadeTime );
-
-    } else {
+    /*
+    if ( ! _self.browser.supportsTransitions ) {
       // If CSS3 transitions not supported or disabled
-
       var currSlide = mySlides[ myInstance.current || 0 ] || false;
       if ( ! currSlide ) {
         return false;
@@ -223,6 +249,20 @@
         };
       fadeIn();
     }
+    */
+
+    // If CSS3 transitions are supported
+    var currSlideIndex = _self.sliders[ myInstanceIndex ].current;
+    if ( mySlides[ currSlideIndex ] ) {
+      mySlides[ currSlideIndex ].className = mySlides[ currSlideIndex ].className.replace( ' ' + visibleClass, '' );
+    }
+    if ( mySlides[ mySlideIndex ] ) {
+      mySlides[ mySlideIndex ].className += ' ' + visibleClass;
+    }
+    _self.sliders[ myInstanceIndex ].current = mySlideIndex;
+    setTimeout(function () {
+      _self.settings.after.apply( myInstance, [ mySlideIndex ] );
+    }, fadeTime );
   };
 
 
@@ -243,6 +283,10 @@
       $tabs;
 
     // Helpersgg
+	if ( ! _self.settings.speed ) {
+		_self.settings.speed = _self.getTransitionDuration( $this.childNodes[ 0 ] );
+	}
+	// console.log( _self.settings.speed );
     var slideIndex = 0,
       $childNodes = $this.childNodes,
       $slides = [],
@@ -265,7 +309,7 @@
     // Classenames
     var navClass = namespace + "_nav " + namespaceIndex + "_nav",
       activeClass = namespace + "_here",
-      visibleClass = namespaceIndex + "_on",
+      visibleClass = 'rslide-active ' + namespaceIndex + '_on ',
       slideClassPrefix = namespaceIndex + "_s";
 
     // Pager
@@ -302,13 +346,20 @@
     }
 
     // Hide all slides, then show first one
-    for ( var s4 = 0; s4 < slidesLength; s4++ ) {
-      _self.hideItem( $slides[ s4 ] );
+    /*
+    if ( ! _self.browser.supportsTransitions ) {
+      for ( var s4 = 0; s4 < slidesLength; s4++ ) {
+        _self.hideItem( $slides[ s4 ] );
+      }
     }
     _self.showItem( $slides[ 0 ] );
-    $slides[ 0 ].className += ' ' + visibleClass;
+    */
+    if ( ( $slides[ 0 ].className || '' ).indexOf( visibleClass ) < 0 ) {
+      $slides[ 0 ].className = $slides[ 0 ].className.replace( /\s*rslide-active/, '' ) + ' ' + visibleClass;
+    }
 
     // CSS transitions
+    /*
     if ( _self.browser.supportsTransitions ) {
       for ( var s5 = 0; s5 < slidesLength; s5++ ) {
         try {
@@ -324,6 +375,7 @@
         }
       }
     }
+    */
 
     // Only run if there's more than one slide
     var $navContainer = false;
