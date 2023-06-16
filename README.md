@@ -1,16 +1,18 @@
 # ResponsiveSlides.js v1.60.0
 
 ## Simple & lightweight responsive slider plugin (less than 10kb)
-ResponsiveSlides.js is a tiny vanilla plugin that creates a responsive slider using elements inside a container. It was built back in 2011 with jQuery by Ariel [ResponsiveSlides.js](http://responsiveslides.com/). This fork is an updated version working without jQuery keeping the spirit and options from the original version.
+[ResponsiveSlides.js](https://responsive-slides.pierre-henri-lavigne.info) is a tiny vanilla plugin that creates a responsive slider using elements inside a container. 
+It was built back in 2011 with jQuery by [Ariel](http://responsiveslides.com/). 
+This fork is an updated version working without jQuery keeping the spirit and options from the original version.
 
-Biggest difference to other responsive slider plugins is the file size (less than 10kb minified and gzipped) + that this one doesn't try to do everything. 
-The plugin is shipped with 2 modes:
+This plugins doesn't try to do everything. Shipped shipped with 2 modes:
 - Either it just automatically fades the images
 - Or operates as a responsive image container with pagination and/or navigation to fade between slides.
 
 The biggest difference with the original version is that the picture is fading over the current one. 
-It's not a cross-fading animation (one is fading out while another one is fading in). 
+It's not a cross-fading like animation (one is fading out while another one is fading in). 
 Better in performance - and visually to my mind.
+
 
 ### Features:
 
@@ -41,10 +43,7 @@ Better in performance - and visually to my mind.
 Usage Instructions and demo
 ======
 
-For instructions and demo go to [http://responsiveslides.com/](http://responsiveslides.com/), or [download this repository as a zip file](https://github.com/arielsalminen/ResponsiveSlides.js/zipball/master) and and open "index.html" from the "example" folder.
-
-* View [additional usage examples online](http://responsiveslides.com/themes/themes.html).
-* View [a demo with captions](http://responsiveslides.com/with-captions/themes.html).
+For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.info]https://responsive-slides.pierre-henri-lavigne.info)
 
 
 
