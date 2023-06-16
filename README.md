@@ -5,7 +5,7 @@
 It was built back in 2011 with jQuery by [Ariel](http://responsiveslides.com/). 
 This fork is an updated version working without jQuery keeping the spirit and options from the original version.
 
-This plugins doesn't try to do everything. Shipped shipped with 2 modes:
+This plugins doesn't try to do everything and is shipped with the following 2 modes:
 - Either it just automatically fades the images
 - Or operates as a responsive image container with pagination and/or navigation to fade between slides.
 
@@ -16,7 +16,7 @@ Better in performance - and visually to my mind.
 
 ### Features:
 
-## Existing features
+#### Existing features
  * Fully responsive
  * jQuery dependency removed
  * Less than 10kb minified and gzipped
@@ -27,7 +27,7 @@ Better in performance - and visually to my mind.
  * Works in all major desktop and mobile browsers
  * Captions and other html-elements supported inside slides
 
-## Coming (todo)
+#### Coming (todo)
  * JavaScript fallback
  * Automatic and manual fade
  * Separate pagination and next/prev controls
@@ -40,15 +40,13 @@ Better in performance - and visually to my mind.
 
 
 
-Usage Instructions and demo
-======
+## Usage Instructions and demo
 
 For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.info]https://responsive-slides.pierre-henri-lavigne.info)
 
 
 
-License
-======
+### License
 
 Licensed under the MIT license.
 
@@ -63,10 +61,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 
-Changelog
-======
+### Changelog
 
-v2.0.0
+#### v2.0.0
 - Setup Grunt as the primary build tool
 - Move to cleaner SEMVER versioning
 - Switch to non jQuery vanilla standard prototype code, not ES6 syntax for backward compatibility
