@@ -1,31 +1,35 @@
 # ResponsiveSlides.js v1.60.0
 
-### Simple & lightweight responsive slider plugin (less than 10kb)
-
-
+## Simple & lightweight responsive slider plugin (less than 10kb)
 ResponsiveSlides.js is a tiny vanilla plugin that creates a responsive slider using elements inside a container. It was built back in 2011 with jQuery by Ariel [ResponsiveSlides.js](http://responsiveslides.com/).
 
-Biggest difference to other responsive slider plugins is the file size (less than 10kb minified and gzipped) + that this one doesn't try to do everything. The plugin is shipped with 2 modes:
+Biggest difference to other responsive slider plugins is the file size (less than 10kb minified and gzipped) + that this one doesn't try to do everything. 
+The plugin is shipped with 2 modes:
 - Either it just automatically fades the images
 - Or operates as a responsive image container with pagination and/or navigation to fade between slides.
 
-#### Features:
+### Features:
+
+## Existing features
  * Fully responsive
- * Less than 10kb minified and gzipped
- * CSS3 transitions ~~with JavaScript fallback~~
+ * Less than 10kb minified and gzipped (jQuery less)
+ * CSS3 transitions 
  * Simple markup using unordered list
  * Settings for transition and timeout durations
  * Multiple slideshows supported
- * ~~Automatic and manual fade~~
  * Works in all major desktop and mobile browsers
  * Captions and other html-elements supported inside slides
- * ~~Separate pagination and next/prev controls~~
- * ~~Possibility to choose where the controls append to~~
- * ~~Possibility to randomize the order of the slides~~
- * ~~Possibility to use custom markup for pagination~~
- * ~~Can be paused while hovering slideshow and/or controls~~
- * ~~Images can be wrapped inside links~~
- * ~~Optional 'before' and 'after' callbacks~~
+
+## Coming (todo)
+ * JavaScript fallback
+ * Automatic and manual fade
+ * Separate pagination and next/prev controls
+ * Possibility to choose where the controls append to
+ * Possibility to randomize the order of the slides
+ * Possibility to use custom markup for pagination
+ * Can be paused while hovering slideshow and/or controls
+ * Images can be wrapped inside links
+ * Optional 'before' and 'after' callbacks
 
 
 

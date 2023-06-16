@@ -18,6 +18,11 @@ module.exports = function(grunt) {
 			]
 		},
 		uglify: {
+			options: {
+				output: {
+					comments: 'some'
+				}
+			},
 			build: {
 				src: 'src/js/responsiveslides.js',
 				dest: 'dist/js/responsiveslides.min.js'
