@@ -1,18 +1,23 @@
 # ResponsiveSlides.js v1.60.0
 
 ## Simple & lightweight responsive slider plugin (less than 10kb)
-ResponsiveSlides.js is a tiny vanilla plugin that creates a responsive slider using elements inside a container. It was built back in 2011 with jQuery by Ariel [ResponsiveSlides.js](http://responsiveslides.com/).
+ResponsiveSlides.js is a tiny vanilla plugin that creates a responsive slider using elements inside a container. It was built back in 2011 with jQuery by Ariel [ResponsiveSlides.js](http://responsiveslides.com/). This fork is an updated version working without jQuery keeping the spirit and options from the original version.
 
 Biggest difference to other responsive slider plugins is the file size (less than 10kb minified and gzipped) + that this one doesn't try to do everything. 
 The plugin is shipped with 2 modes:
 - Either it just automatically fades the images
 - Or operates as a responsive image container with pagination and/or navigation to fade between slides.
 
+The biggest difference with the original version is that the picture is fading over the current one. 
+It's not a cross-fading animation (one is fading out while another one is fading in). 
+Better in performance - and visually to my mind.
+
 ### Features:
 
 ## Existing features
  * Fully responsive
- * Less than 10kb minified and gzipped (jQuery less)
+ * jQuery dependency removed
+ * Less than 10kb minified and gzipped
  * CSS3 transitions 
  * Simple markup using unordered list
  * Settings for transition and timeout durations
@@ -65,6 +70,6 @@ Changelog
 v2.0.0
 - Setup Grunt as the primary build tool
 - Move to cleaner SEMVER versioning
-- Switch to non jQuery vanilla standard prototype code (not ES6) for backward compatibility
+- Switch to non jQuery vanilla standard prototype code, not ES6 syntax for backward compatibility
 - Keep namespace and features as closed to the original
 - Only the base fade animations are working now (pagination, pause, etc... not ready yet)
