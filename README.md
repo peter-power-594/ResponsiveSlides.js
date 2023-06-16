@@ -1,4 +1,4 @@
-# ResponsiveSlides.js v1.60.0
+# ResponsiveSlides.js v2
 
 ## Simple & lightweight responsive slider plugin (less than 10kb)
 [ResponsiveSlides.js](https://responsive-slides.pierre-henri-lavigne.info) is a tiny vanilla plugin that creates a responsive slider using elements inside a container. 
