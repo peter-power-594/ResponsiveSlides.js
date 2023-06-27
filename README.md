@@ -1,4 +1,4 @@
-# ResponsiveSlides.js v1.60.0
+# ResponsiveSlides.js v2
 
 ## Simple & lightweight responsive slider plugin (less than 10kb)
 [ResponsiveSlides.js](https://responsive-slides.pierre-henri-lavigne.info) is a tiny vanilla plugin that creates a responsive slider using elements inside a container. 
@@ -42,7 +42,7 @@ Better in performance - and visually to my mind.
 
 ## Usage Instructions and demo
 
-For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.info]https://responsive-slides.pierre-henri-lavigne.info)
+For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.info](https://responsive-slides.pierre-henri-lavigne.info)
 
 
 
@@ -50,7 +50,7 @@ For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.
 
 Licensed under the MIT license.
 
-From V2.0.0: Copyright (c) 2023 Pierre-Henri Lavigne, https://www.pierre-henri-lavigne.info
+From V2.0.0: Copyright (c) 2023 Pierre-Henri Lavigne, https://www.pierre-henri-lavigne.info  
 Until V1.55: Copyright (c) 2011-2023 Ariel Salminen, https://arie.ls/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
