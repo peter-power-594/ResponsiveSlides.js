@@ -65,6 +65,16 @@ module.exports = function(grunt) {
 					'src/js/*.js'
 				],
 				tasks: [ 'sass', 'jshint', 'concat' ]
+			},
+			js: {
+				options: {
+					livereload: 35780
+				},
+				files: [
+					'src/sass/*.scss',
+					'src/js/*.js'
+				],
+				tasks: [ 'jshint', 'concat' ]
 			}
 		}
 	});
@@ -79,5 +89,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [ 'connect', 'watch:all' ] );
 
 	grunt.registerTask( 'debug', [ 'connect', 'watch:debug' ] );
+
+	grunt.registerTask( 'js', [ 'connect', 'watch:js' ] );
 
 };

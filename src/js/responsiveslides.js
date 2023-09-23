@@ -28,6 +28,8 @@
       // Boolean: Animate automatically, true or false
       "auto": typeof ops.auto !== 'undefined' ? ops.auto : true,
 
+	  "stop": typeof ops.stop !== 'undefined' ? ops.stop : true,
+
       // Integer: Speed of the transition, in milliseconds
       "speed": ops.speed || false,
 
@@ -78,9 +80,6 @@
 
     // Detect transition support
     _self.browser.supportsTransitions = _self.detectTransitions();
-    if ( ! _self.browser.supportsTransitions ) {
-      return false;
-    }
 
     var sliders = document.querySelectorAll( sel ),
       isActiveClassName = _self.settings.namespace + '-initialized';
@@ -208,22 +207,26 @@
     }
 
     _self.settings.before.apply( myInstance, [ mySlideIndex ] );
-    var fadeTime = myInstance.fadeTime || _self.settings.fadeTime,
+    var fadeTime = myInstance.speed || _self.settings.speed,
       visibleClass = _self.sliders[ myInstanceIndex ].classNames.visible;
 
-    /*
+
     if ( ! _self.browser.supportsTransitions ) {
       // If CSS3 transitions not supported or disabled
       var currSlide = mySlides[ myInstance.current || 0 ] || false;
       if ( ! currSlide ) {
         return false;
       }
-      var f = 0,
+	  var comingSlide = mySlides[ mySlideIndex ] || mySlides[ 0 ];
+	  if ( ! comingSlide ) {
+		return false;
+	  }
+      var f1 = 0, f2 = 0,
         fadeStep = Math.floor( fadeTime / 10 ),
         fadeOut = function() {
-          f++;
-          currSlide.style.opacity = 0.1 * f;
-          if ( f <= 9 ) {
+          f1++;
+          comingSlide.style.opacity = 0.1 * f1;
+          if ( f1 <= 9 ) {
             setTimeout( fadeOut, fadeStep );
           }
           else {
@@ -231,25 +234,25 @@
           }
         },
         fadeIn = function() {
-          f++;
-          currSlide.style.opacity = 1 - ( 0.1 * f );
-          if ( f <= 9 ) {
+          f2++;
+          currSlide.style.opacity = 1 - ( 0.1 * f2 );
+          if ( f2 <= 9 ) {
             setTimeout( fadeIn, fadeStep );
           }
           else {
             currSlide.className = currSlide.className.replace( ' ' + visibleClass, '' );
             _self.hideItem( currSlide );
-            f = 0;
-            if ( mySlides[ mySlideIndex ] ) {
+            f2 = 0;
+            if ( comingSlide ) {
               _self.sliders[ myInstanceIndex ].current = mySlideIndex;
-              currSlide = mySlides[ mySlideIndex ];
-              fadeOut();
+              currSlide = comingSlide;
             }
           }
         };
+	  fadeOut();
       fadeIn();
     }
-    */
+ 
 
     // If CSS3 transitions are supported
     var currSlideIndex = _self.sliders[ myInstanceIndex ].current;
@@ -302,6 +305,21 @@
     }
     slidesLength = $slides.length;
 
+    if ( ! _self.browser.supportsTransitions ) {
+      for ( var s5 = 0; s5 < slidesLength; s5++ ) {
+        try {
+          $slides[ s5 ].style.webkitTransition = 'none';
+          $slides[ s5 ].style.mozTransition = 'none';
+          $slides[ s5 ].style.oTransition = 'none';
+          $slides[ s5 ].style.transition = 'none';
+        } catch( e ) {
+          if ( window.console && window.console.log ) {
+            window.console.log( e );
+          }
+        }
+	  }
+    }
+
     // Namespacing
     var namespace = _self.settings.namespace,
       namespaceIndex = namespace + sliderIndex;
@@ -346,14 +364,12 @@
     }
 
     // Hide all slides, then show first one
-    /*
     if ( ! _self.browser.supportsTransitions ) {
       for ( var s4 = 0; s4 < slidesLength; s4++ ) {
         _self.hideItem( $slides[ s4 ] );
       }
+      _self.showItem( $slides[ 0 ] );
     }
-    _self.showItem( $slides[ 0 ] );
-    */
     if ( ( $slides[ 0 ].className || '' ).indexOf( visibleClass ) < 0 ) {
       $slides[ 0 ].className = $slides[ 0 ].className.replace( /\s*rslide-active/, '' ) + ' ' + visibleClass;
     }
@@ -478,6 +494,13 @@
           clearTimeout( rotate );
           _self.sliders[ myInstanceIndex ].current = 0;
         });
+
+		if ( _self.settings.stop ) {
+			var autoStop = parseInt( _self.settings.stop, 10 );
+			setTimeout(function() {
+				clearTimeout( rotate );
+			}, ! isNaN( autoStop ) && autoStop > 1000 * 10 ? autoStop : 1000 * 60 );
+		}
       }
 
       // Restarting cycle
@@ -493,7 +516,7 @@
       // Pause on hover
       if ( _self.settings.pause ) {
         $this.addEventListener( 'mouseenter', function() {
-          clearInterval( rotate );
+          clearTimeout( rotate );
         });
         $this.addEventListener( 'mouseleave', function() {
           restartCycle();
