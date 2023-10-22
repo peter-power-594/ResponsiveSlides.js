@@ -16,8 +16,8 @@
 <link rel="shortcut icon" href="./favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29/themes/prism-solarizedlight.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.0.0/dist/css/responsiveslides.min.css">
-<link rel="stylesheet" href="./theme.css">
+<link rel="stylesheet" href="./css/responsiveslides.min.css">
+<link rel="stylesheet" href="./css/theme.css">
 <style>
 #slider1 li {
   transition-duration: 0.8s;
@@ -37,8 +37,10 @@
             <a class="pure-menu-heading" href="#company">Resp. Slides. JS 2</a>
 
             <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">Ex. 1: Simple slider</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ex. 2: Coming soon</a></li>
+                <li class="pure-menu-item pure-menu-selected"><a href="index.html" class="pure-menu-link">Ex. 1: Simple Slider</a></li>
+                <li class="pure-menu-item"><a href="index2.html" class="pure-menu-link">Ex. 2: On-demand Loading</a></li>
+                <li class="pure-menu-item"><a href="index3.html" class="pure-menu-link">Ex. 3: High-res. Images</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ex. 4: Coming Soon</a></li>
             </ul>
         </div>
     </div>
@@ -94,7 +96,7 @@
 
 
             <h4>CSS</h4>
-            <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.0.0/dist/css/responsiveslides.min.css&quot;&gt;
+            <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.1.0/dist/css/responsiveslides.min.css&quot;&gt;
 &lt;style&gt;
 #slider1 li {
   transition-duration: 0.8s;
@@ -104,7 +106,7 @@
 
 
             <h4>JS</h4>
-            <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.0.0/dist/js/responsiveslides.min.js&quot;&gt;&lt;/script&gt;
+            <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.1.0/dist/js/responsiveslides.min.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
 document.addEventListener(&#039;DOMContentLoaded&#039;, function() {
   // Slideshow 1
@@ -112,19 +114,6 @@ document.addEventListener(&#039;DOMContentLoaded&#039;, function() {
 });
 &lt;/script&gt;</code></pre>
             <p>Use the setting <em>timeout</em> in the javascript to modify the duration between 2 pictures.</p>
-
-
-    <!-- Slideshow 2 -->
-    <!--h3>Example 2</h3>
-    <ul class="rslides" id="slider2">
-      <li><img src="images/1.jpg" alt=""></li>
-      <li><img data-src="images/2.jpg" src="data:image/svg+xml;utf-8,%3Csvg width='800' height='600' viewBox='0 0 800 600' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E" width="800" height="600" alt="" class="placeholder" /></li>
-      <li><img data-src="images/3.jpg" src="data:image/svg+xml;utf-8,%3Csvg width='800' height='600' viewBox='0 0 800 600' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E" width="800" height="600" alt="" class="placeholder" /></li>
-    </ul>
-    <h4>Callback events</h3>
-    <ul id="log2" class="events">
-      <li></li>
-    </ul-->
 
 
 
@@ -180,7 +169,7 @@ document.addEventListener(&#039;DOMContentLoaded&#039;, function() {
 
 <script src="https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29/prism.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29/plugins/autoloader/prism-autoloader.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.0.0/dist/js/responsiveslides.min.js"></script>
+<script src="./js/responsiveslides.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Slideshow 1
@@ -244,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
     */
 });
 </script>
-<script src="./ui.js"></script>
+<script src="./js/ui.js"></script>
 
 </body>
 </html>
