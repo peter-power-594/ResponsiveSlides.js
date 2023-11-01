@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-				  'dist/css/responsiveslides.min.css': 'src/sass/responsiveslides.scss'
+				  'dist/css/responsiveslides.min.css': 'src/sass/responsiveslides.scss',
+				  'dist/css/bootstrap-carousel.min.css': 'src/sass/bootstrap-carousel.scss'
 				}
 			}
 		},

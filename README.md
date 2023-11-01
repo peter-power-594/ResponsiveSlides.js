@@ -19,30 +19,30 @@ Better in performance - and visually to my mind.
 #### Existing features
  * Fully responsive
  * jQuery dependency removed
- * Less than 10kb minified and gzipped
+ * Less than 12kb minified and gzipped
  * CSS3 transitions 
  * Simple markup using unordered list
  * Settings for transition and timeout durations
  * Multiple slideshows supported
  * Works in all major desktop and mobile browsers
  * Captions and other html-elements supported inside slides
-
-#### Coming (todo)
- * JavaScript fallback
- * Automatic and manual fade
  * Separate pagination and next/prev controls
  * Possibility to choose where the controls append to
- * Possibility to randomize the order of the slides
  * Possibility to use custom markup for pagination
  * Can be paused while hovering slideshow and/or controls
  * Images can be wrapped inside links
  * Optional 'before' and 'after' callbacks
 
+#### Coming (todo)
+ * JavaScript fallback
+ * Automatic and manual fade
+ * Possibility to randomize the order of the slides
+
 
 
 ## Usage Instructions and demo
 
-For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.info](https://responsive-slides.pierre-henri-lavigne.info)
+For instructions and demo go to [https://responsive-slides.phutu.red](https://responsive-slides.phutu.red)
 
 
 
@@ -50,7 +50,7 @@ For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.
 
 Licensed under the MIT license.
 
-From V2.0.0: Copyright (c) 2023 Pierre-Henri Lavigne, https://www.pierre-henri-lavigne.info  
+From V2.0.0: Copyright (c) 2023 Pierre-Henri Lavigne, https://red.phutu.red/
 Until V1.55: Copyright (c) 2011-2023 Ariel Salminen, https://arie.ls/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
