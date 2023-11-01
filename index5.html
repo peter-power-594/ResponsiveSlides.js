@@ -14,18 +14,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
 <meta charset="utf-8">
-<title>Example 1: Simpler Slider | Responsive Slides²</title>
+<title>Example 5: Slider with Navigation | Responsive Slides²</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="shortcut icon" href="https://red.phutu.red/shared/icons/favicon.ico">
 <link rel="stylesheet" href="https://red.phutu.red/shared/css/theme.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29/themes/prism-coy.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.2.0/dist/css/responsiveslides.min.css">
-<style>
-#slider1 li {
-	transition-duration: 0.8s;
-}
-</style>
 </head>
 <body>
 <div id="layout">
@@ -40,11 +35,11 @@
 			<a class="pure-menu-heading" href="#main">Responsive Slides <sup>2</sup></a>
 
 			<ul class="pure-menu-list">
-				<li class="pure-menu-item pure-menu-selected"><a href="index.html" class="pure-menu-link">Ex. 1: Simple Slider</a></li>
+				<li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Ex. 1: Simple Slider</a></li>
 				<li class="pure-menu-item"><a href="index2.html" class="pure-menu-link">Ex. 2: On-demand Loading</a></li>
 				<li class="pure-menu-item"><a href="index3.html" class="pure-menu-link">Ex. 3: High-res. Images</a></li>
 				<li class="pure-menu-item"><a href="index4.html" class="pure-menu-link">Ex. 4: Slider with Pagination</a></li>
-				<li class="pure-menu-item"><a href="index5.html" class="pure-menu-link">Ex. 5: Slider with Navigation</a></li>
+				<li class="pure-menu-item pure-menu-selected"><a href="index5.html" class="pure-menu-link">Ex. 5: Slider with Navigation</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Ex. 6: Coming Soon</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Ex. 7: Coming Soon</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Ex. 8: Coming Soon</a></li>
@@ -56,73 +51,74 @@
 
 	<div id="main">
 		<div class="header">
-			<h1>Responsive Slides <sup>2</sup></h1>
-			<h2>Simple &amp; lightweight responsive slideshow plugin</h2>
+				<h1>Responsive Slides <sup>2</sup></h1>
+				<h2>Simple &amp; lightweight responsive slideshow plugin</h2>
 		</div>
 
 		<div class="content">
 
-			<!-- Slideshow 1 -->
-			<h3>Example 1: Butterflies Simple Slider</h3>
-			<p>3 pictures rotating every 5s. Every picture fade in 800ms.</p>
+            <!-- Slideshow 5 -->
+			<h3>Example 5: Slider with Navigation</h3>
+			<p>A simpler slider with the navigation actived.</p>
 
-			<ul class="rslides" id="slider1">
-				<li class="rslide-active">
-					<a href="https://www.pexels.com/photo/17188965/" target="_blank">
-						<img src="https://red.phutu.red/shared/images/1.jpg" width="800" height="400" alt="Butterfly on a leaf">
-					</a>
-				</li>
-				<li>
-					<a href="https://www.pexels.com/fr-fr/photo/17188967/" target="_blank">
-						<img src="https://red.phutu.red/shared/images/2.jpg" width="800" height="400" alt="Butterfly in a flower">
-					</a>
-				</li>
-				<li>
-					<a href="https://www.pexels.com/fr-fr/photo/17188966/" target="_blank">
-						<img src="https://red.phutu.red/shared/images/3.jpg" width="800" height="400" alt="Butterfly feeding">
-					</a>
-				</li>
-			</ul>
+			<div class="rslides-wrapper">
+				<ul class="rslides" id="slider5">
+					<li class="rslide-active">
+						<a href="https://www.pexels.com/photo/17188965/" target="_blank">
+							<img src="https://red.phutu.red/shared/images/1.jpg" width="800" height="400" alt="Butterfly on a leaf">
+						</a>
+					</li>
+					<li>
+						<a href="https://www.pexels.com/fr-fr/photo/17188967/" target="_blank">
+							<img src="https://red.phutu.red/shared/images/2.jpg" width="800" height="400" alt="Butterfly in a flower">
+						</a>
+					</li>
+					<li>
+						<a href="https://www.pexels.com/fr-fr/photo/17188966/" target="_blank">
+							<img src="https://red.phutu.red/shared/images/3.jpg" width="800" height="400" alt="Butterfly feeding">
+						</a>
+					</li>
+				</ul>
+			</div>
 
-			<h4>HTML</h4>
-			<pre><code class="language-html">&lt;ul class=&quot;rslides&quot; id=&quot;slider1&quot;&gt;
-  &lt;li class=&quot;rslide-active&quot;&gt;
-    &lt;a href=&quot;https://www.pexels.com/photo/17188965/&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;images/1.jpg&quot; width=&quot;800&quot; height=&quot;400&quot; alt=&quot;Butterfly on a leaf&quot;&gt;
-    &lt;/a&gt
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;a href=&quot;https://www.pexels.com/photo/17188967/&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;images/2.jpg&quot; width=&quot;800&quot; height=&quot;400&quot; alt=&quot;Butterfly in a flower&quot;&gt;
-    &lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;a href=&quot;https://www.pexels.com/photo/17188966/&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;images/3.jpg&quot; width=&quot;800&quot; height=&quot;400&quot; alt=&quot;Butterfly feeding&quot;&gt;
-    &lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-
-
-			<h4>CSS</h4>
-			<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.2.0/dist/css/responsiveslides.min.css&quot;&gt;
-&lt;style&gt;
-#slider1 li {
-  transition-duration: 0.8s;
-}
-&lt;/style&gt;</code></pre>
-			<p>Set the fade duration through the stylesheet as classic transitions.</p>
+            <h4>HTML</h4>
+            <pre><code class="language-html">&lt;div class=&quot;rslides-wrapper&quot;&gt;
+  &lt;ul class=&quot;rslides&quot; id=&quot;slider5&quot;&gt;
+    &lt;li class=&quot;rslide-active&quot;&gt;
+      &lt;a href=&quot;https://www.pexels.com/photo/17188965/&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;./images/1.jpg&quot; width=&quot;800&quot; height=&quot;400&quot; alt=&quot;Butterfly on a leaf&quot;&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;https://www.pexels.com/fr-fr/photo/17188967/&quot; target=&quot;_blank&quot;&gt;
+        &lt;img src=&quot;./images/2.jpg&quot; width=&quot;800&quot; height=&quot;400&quot; alt=&quot;Butterfly in a flower&quot;&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;https://www.pexels.com/fr-fr/photo/17188966/&quot; target=&quot;_blank&quot;&gt; 
+        &lt;img src=&quot;./images/3.jpg&quot; width=&quot;800&quot; height=&quot;400&quot; alt=&quot;Butterfly feeding&quot;&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+			<p>Unlike the previous examples, the main slider is wrapper in a <em>div</em> tag to easily style the pagination.</p>
 
 
-			<h4>JS</h4>
-			<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.2.0/dist/js/responsiveslides.min.js&quot;&gt;&lt;/script&gt;
+            <h4>CSS</h4>
+            <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.2.0/dist/css/responsiveslides.min.css&quot;&gt;</code></pre>
+			<p>Default styles are used in the current example.</p>
+
+            <h4>JS</h4>
+            <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.2.0/dist/js/responsiveslides.min.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
 document.addEventListener(&#039;DOMContentLoaded&#039;, function() {
-  // Slideshow 1
-  new responsiveSlides(&#039;#slider1&#039;, { timeout: 5000 });
+  // Slideshow 5
+  new responsiveSlides(&#39;#slider5&#39;, {
+    nav: true
+  });
 });
 &lt;/script&gt;</code></pre>
-			<p>Use the setting <em>timeout</em> in the javascript to modify the duration between 2 pictures.</p>
+			<p>Add the setting <em>nav</em> to <em>true</em> to enable the navigation.</p>
 
 
 			<p>Find out more in the next examples or <a href="https://github.com/peter-power-594/ResponsiveSlides.js" id="download">jump to the documentation</a></p>
@@ -133,8 +129,8 @@ document.addEventListener(&#039;DOMContentLoaded&#039;, function() {
 				Still released under the MIT license. If you have any feedback or questions, please don’t hesitate to reach out at <a href="https://github.com/peter-power-594/ResponsiveSlides.js" target="_blank">GitHub project page</a>.
 			</h6>
 
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 <script src="https://red.phutu.red/shared/js/ui.js"></script>
@@ -143,8 +139,12 @@ document.addEventListener(&#039;DOMContentLoaded&#039;, function() {
 <script src="https://cdn.jsdelivr.net/gh/peter-power-594/ResponsiveSlides.js@2.2.0/dist/js/responsiveslides.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-	// Slideshow 1
-	new responsiveSlides('#slider1', { timeout: 5000 });
+
+	// Slideshow 5
+	new responsiveSlides('#slider5', {
+		nav: true
+	});
+
 });
 </script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
