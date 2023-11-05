@@ -1,17 +1,13 @@
-# ResponsiveSlides.js v2
+# Responsive Slides² (Responsive Slides.js v2)
 
 ## Simple & lightweight responsive slider plugin (less than 10kb)
-[ResponsiveSlides.js](https://responsive-slides.pierre-henri-lavigne.info) is a tiny vanilla plugin that creates a responsive slider using elements inside a container. 
+[Responsive Slides²](https://responsive-slides.phutu.red) is a tiny vanilla plugin that creates a responsive slider using elements inside a container. 
 It was built back in 2011 with jQuery by [Ariel](http://responsiveslides.com/). 
 This fork is an updated version working without jQuery keeping the spirit and options from the original version.
 
 This plugins doesn't try to do everything and is shipped with the following 2 modes:
 - Either it just automatically fades the images
 - Or operates as a responsive image container with pagination and/or navigation to fade between slides.
-
-The biggest difference with the original version is that the picture is fading over the current one. 
-It's not a cross-fading like animation (one is fading out while another one is fading in). 
-Better in performance - and visually to my mind.
 
 
 ### Features:
@@ -32,10 +28,10 @@ Better in performance - and visually to my mind.
  * Can be paused while hovering slideshow and/or controls
  * Images can be wrapped inside links
  * Optional 'before' and 'after' callbacks
+ * Automatic and manual fade
 
 #### Coming (todo)
  * JavaScript fallback
- * Automatic and manual fade
  * Possibility to randomize the order of the slides
 
 
