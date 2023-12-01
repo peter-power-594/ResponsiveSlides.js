@@ -224,21 +224,34 @@
 			return false;
 		}
 
-		var fadeTime = myInstance.speed || _self.settings.speed,
+		var currSlideIndex = myInstance.current,
+			fadeTime = myInstance.speed || _self.settings.speed,
 			activeClass = _self.sliders[ myInstanceIndex ].classNames.active,
 			CLASS_NAME_RIGHT = 'carousel-item-right',
 			CLASS_NAME_LEFT = 'carousel-item-left',
 			CLASS_NAME_NEXT = 'carousel-item-next',
 			CLASS_NAME_PREV = 'carousel-item-prev',
-			directionalClassName =  myInstance.current > newSlideIndex ? CLASS_NAME_RIGHT : CLASS_NAME_LEFT,
-			orderClassName = myInstance.current > newSlideIndex ? CLASS_NAME_PREV : CLASS_NAME_NEXT;
+			directionalClassName =  newSlideIndex > currSlideIndex ? CLASS_NAME_LEFT : CLASS_NAME_RIGHT,
+			orderClassName = newSlideIndex > currSlideIndex ? CLASS_NAME_NEXT : CLASS_NAME_PREV,
+			lastSlideReached = ! newSlideIndex && currSlideIndex === mySlides.length - 1 ? true : false,
+			firstSlideReached = ! currSlideIndex && newSlideIndex === mySlides.length - 1 ? true : false;
+		if ( lastSlideReached ) {
+			// Need to revert animation when moving forward and the last slide was reached in slide mode
+			directionalClassName = CLASS_NAME_LEFT;
+			orderClassName = CLASS_NAME_NEXT;
+		}
+		else if ( firstSlideReached ) {
+			// Need to revert animation when moving backward and the first slide was reached in slide mode
+			directionalClassName = CLASS_NAME_RIGHT;
+			orderClassName = CLASS_NAME_PREV;
+		}
 
 		_self.browser.animating = new Date().getTime() + fadeTime;
 		_self.settings.before.apply( myInstance, [ newSlideIndex ] );
 
 		if ( ! _self.browser.supportsTransitions ) {
 			// If CSS3 transitions not supported or disabled
-			var currSlide = mySlides[ myInstance.current || 0 ] || false;
+			var currSlide = mySlides[ currSlideIndex || 0 ] || false;
 			if ( ! currSlide ) {
 				return false;
 			}
@@ -278,8 +291,7 @@
 		}
 		else {
 			// If CSS3 transitions are supported
-			var currSlideIndex = _self.sliders[ myInstanceIndex ].current,
-				activeSlide = mySlides[ currSlideIndex ] || false,
+			var activeSlide = mySlides[ currSlideIndex ] || false,
 				nextSlide = mySlides[ newSlideIndex ] || false;
 			if ( activeSlide && nextSlide ) {
 				// Default: Switch directly the active className
