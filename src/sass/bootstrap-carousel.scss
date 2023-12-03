@@ -15,6 +15,7 @@
 }
 
 .bd-placeholder-img-lg {
+	display: block;
 	font-size: 3.5rem;
 	text-anchor: middle;
 	-webkit-user-select: none;
@@ -178,10 +179,16 @@
 	display: flex;
 	-ms-flex-pack: center;
 	justify-content: center;
+	width: auto;
 	padding-left: 0;
+	padding-right: 0;
 	margin-right: 15%;
 	margin-left: 15%;
 	list-style: none;
+	background: transparent;
+	box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 .carousel-indicators li {

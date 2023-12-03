@@ -85,14 +85,6 @@
 		if ( ! _self.settings.manualControls.length ) {
 			_self.settings.manualControls = false;
 		}
-		if ( _self.settings.bootstrap ) {
-			if ( ! _self.settings.manualControls.length ) {
-				_self.settings.manualControls = '.carousel-indicators';
-			}
-			if ( ! _self.settings.nav ) {
-				_self.settings.nav = '.carousel-control-prev, .carousel-control-next';
-			}
-		}
 		_self.browser = {};
 
 		// Detect transition support
@@ -102,7 +94,7 @@
 		var sliders = _doc.querySelectorAll( sel ),
 			isActiveClassName = ( _self.settings.namespace.length ? _self.settings.namespace + '-' : '' ) + 'initialized';
 		_self.sliders = [];
-		for ( var i = 0, sliderIndex = 0, j = 0; i < sliders.length; i++ ) {
+		for ( var i = 0, sliderIndex = 0, wrapperId, j = 0; i < sliders.length; i++ ) {
 			if ( ( sliders[ i ].className || '' ).indexOf( isActiveClassName ) > 0 ) {
 				if ( _win.console && _win.console.error ) {
 					_win.console.error( 'Slider #' + ( sliders[ i ].id || '' ) + ' already activated');
@@ -110,6 +102,15 @@
 			}
 			else {
 				sliders[ i ].className += ' ' + isActiveClassName;
+				if ( _self.settings.bootstrap ) {
+					wrapperId = sliders[ i ].parentNode.id ? '#' + sliders[ i ].parentNode.id + ' ' : '';
+					if ( ! _self.settings.manualControls.length ) {
+						_self.settings.manualControls = wrapperId + '.carousel-indicators';
+					}
+					if ( ! _self.settings.nav ) {
+						_self.settings.nav = wrapperId + '.carousel-control-prev, ' + wrapperId + '.carousel-control-next';
+					}
+				}
 				_self.sliders.push( _self.slider( sliders[ i ], j, sliderIndex ) );
 				_self.settings.before.apply( _self.sliders[ _self.sliders.length - 1 ], [ 0 ] );
 				sliderIndex++; j++;
