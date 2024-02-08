@@ -1,7 +1,7 @@
 # Responsive Slides² (Responsive Slides.js v2)
 
 ## Simple & lightweight responsive slider plugin (less than 10kb)
-[Responsive Slides²](https://responsive-slides.phutu.red) is a tiny vanilla plugin that creates a responsive slider using elements inside a container. 
+[Responsive Slides²](https://responsive-slides.pierre-henri-lavigne.info) is a tiny vanilla plugin that creates a responsive slider using elements inside a container. 
 It was built back in 2011 with jQuery by [Ariel](http://responsiveslides.com/). 
 This fork is an updated version working without jQuery keeping the spirit and options from the original version.
 
@@ -38,7 +38,7 @@ This plugins doesn't try to do everything and is shipped with the following 2 mo
 
 ## Usage Instructions and demo
 
-For instructions and demo go to [https://responsive-slides.phutu.red](https://responsive-slides.phutu.red)
+For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.info](https://responsive-slides.pierre-henri-lavigne.info)
 
 
 
@@ -46,7 +46,7 @@ For instructions and demo go to [https://responsive-slides.phutu.red](https://re
 
 Licensed under the MIT license.
 
-From V2.0.0: Copyright (c) 2023 Pierre-Henri Lavigne, https://red.phutu.red/
+From V2.0.0: Copyright (c) 2023 Pierre-Henri Lavigne, https://responsive-slides.pierre-henri-lavigne.info/  
 Until V1.55: Copyright (c) 2011-2023 Ariel Salminen, https://arie.ls/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
