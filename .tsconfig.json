@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "es2019",
+        "strict": true
+    },
+    "watchDirectory": "fixedPollingInterval",
+    "watchOptions": {
+        "excludeDirectories": ["node_modules", "dist"]
+    },
+    "files": [
+        "src/js/responsiveslides.ts"
+    ]
+}

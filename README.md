@@ -40,6 +40,25 @@ This plugins doesn't try to do everything and is shipped with the following 2 mo
 
 For instructions and demo go to [https://responsive-slides.pierre-henri-lavigne.info](https://responsive-slides.pierre-henri-lavigne.info)
 
+### Setting
+
+| name | type | default | description |
+--
+| auto | boolean | true | start automatically the slider animation |
+| stop | boolean | true | Auto stop the carousel after a certain amount of time |
+| speed | number | 0 | Speed of the transition, in milliseconds. By default retrieved dynamically from the first item's css transiton duration |
+| timeout | number | 4000 | Time between slide transitions, in milliseconds (1s = 1000ms) |
+| pager | boolean | false | Display the pagination |
+| nav | boolean | false | Display the navigation (previous and next arrow) |
+| random | boolean | false | Randomize the order of the slides |
+| pause | boolean | Pause the play when hovering the current slide |
+| pauseControls | boolean | false | Pause when hovering the controls area |
+| prevText | string | Previous | Text used to label the "previous" button |
+| maxWidth | number | 0 | Maximum width of the slideshow in pixels (0 = auto size) |
+| navContainer | string | '' | The custom selector where auto-generated controls should be appended to. By default is after the first <ul> child node |
+| manualControls | string | '' | The custom selector where your implemented your pagination |
+| before | function | function() {} | The callback function if present to trigger just before the beginning of the animation |
+| after | function | function() {} | The callback function if present to trigger just after the end of the animation |
 
 
 ### License

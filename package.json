@@ -6,7 +6,8 @@
         "grunt-contrib-jshint": "^3.2.0",
         "grunt-contrib-sass": "^2.0.0",
         "grunt-contrib-uglify": "^5.2.2",
-        "grunt-contrib-watch": "^1.1.0"
+        "grunt-contrib-watch": "^1.1.0",
+        "typescript": "^5.7.3"
     },
     "dependencies": {
         "grunt-cli": "^1.4.3"
